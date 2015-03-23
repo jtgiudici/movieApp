@@ -5,3 +5,19 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+		fight_club = 	Movie.create(
+			title: "Fight Club",
+			director: "David Fincher"
+		)
+		fight_club = 	Movie.create(
+			title: "Pulp Fiction",
+			director: "Quentin Tarantino"
+		)
+		fight_club = 	Movie.create(
+			title: "Inception",
+			director: "Christopher Nolan"
+		)
+									
+		
+		

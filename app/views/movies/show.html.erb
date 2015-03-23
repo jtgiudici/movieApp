@@ -1,0 +1,8 @@
+<h1>Movies#show</h1>
+<p>Find me in app/views/movies/show.html.erb</p>
+
+<h1><%= @movie.title %></h1>
+<h2>Directed by: <%= @movie.director %>
+
+<%= link_to 'Edit', edit_movie_path(@movie)%> |
+<%= link_to 'Back', movies_path %>
