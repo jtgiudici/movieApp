@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 	
+	get "/" => "movies#index"
+	
   resources :movies
 	get 'movies/:id/delete' => 'movies#delete', :as => :movies_delete
 

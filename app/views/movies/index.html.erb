@@ -2,8 +2,10 @@
 <p>Find me in app/views/movies/index.html.erb</p>
 
 <% @movies.each do |movie| %>
-	<ul>
-		<li><%= movie.title %></li>
-		<li><%= movie.director %></li>
-	</ul>
+	<div class="column">
+		<div class="block">
+			<h1><%= movie.title %></h1>
+			<div class="thumb" style="background-image: <%= movie.thumburl %>;"></div>
+		</div>
+	</div>
 <% end %>
