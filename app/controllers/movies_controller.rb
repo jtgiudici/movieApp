@@ -1,6 +1,8 @@
 class MoviesController < ApplicationController
+	
+	
   def index
-		@movies = Movie.all
+		@movies = Movie.search(params[:search])
   end
 
   def show
@@ -44,6 +46,6 @@ class MoviesController < ApplicationController
 
 	private
 	def movie_params
-		params.require(:movie).permit(:title, :director)
+		params.require(:movie).permit(:title, :thumburl, :director, :year, :genre)
 	end
 end

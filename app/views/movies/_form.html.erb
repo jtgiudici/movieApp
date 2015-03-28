@@ -1,13 +1,25 @@
 <%= form_for (@movie) do |f| %>
-	<div class="field">
+	<fieldset>
 		<%= f.label :title %>
 		<%= f.text_field :title %>
-	</div>
-	<div class="field">
+	</fieldset>
+	<fieldset>
+		<%= f.label :thumburl %>
+		<%= f.text_field :thumburl %>
+	</fieldset>
+	<fieldset>
 		<%= f.label :director %>
 		<%= f.text_field :director %>
-	</div>
-	<div class="actions">
+	</fieldset>
+	<fieldset>
+		<%= f.label :year %>
+		<%= f.text_field :year %>
+	</fieldset>
+	<fieldset>
+		<%= f.label :genre %>
+		<%= f.text_field :genre %>
+	</fieldset>
+	<fieldset class="actions">
 		<%= f.submit %>
-	</div>
+	</fieldset>
 <% end %>
