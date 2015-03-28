@@ -8,21 +8,10 @@
 
 		fight_club = 	Movie.create(
 			title: "Fight Club",
-			thumburl: "/assets/thumbs_movies/thumb_fight-club.jpg",
+			thumburl: "fight-club.jpg",
 			director: "David Fincher",
-			year: "1999"
-		)
-		pulp_fiction = 	Movie.create(
-			title: "Pulp Fiction",
-			thumburl: "/assets/thumbs_movies/thumb_pulp-fiction.jpg",
-			director: "Quentin Tarantino",
-			year: "1994"
-		)
-		inception = 	Movie.create(
-			title: "Inception",
-			thumburl: "/assets/thumbs_movies/thumb_inception.jpg",
-			director: "Christopher Nolan",
-			year: "2010"
+			year: "1999",
+			genre: "thriller"
 		)
 									
 		
