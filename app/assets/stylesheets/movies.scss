@@ -16,51 +16,50 @@
 
 header {
 	background-color: darken(#AEAEAE, 40%);
-	border-bottom: 5px solid darken(#AEAEAE, 45%);
+	// border-bottom: 5px solid darken(#AEAEAE, 45%);
 	@include clear;
-	height: 50px;
+	height: 60px;
+	margin: 0 0 40px 0;
 	.logo {
 		background-image: image-url("icon_logo.png");
+		background-position: 50%;
 		background-size: 50px;
 		float: left;
-		height: 50px;
+		height: 60px;
 		margin: 0 10px 0 0;
-		width: 50px;
+		width: 60px;
 	}
 }
-#searchBar {
-	@include clear;
-	margin: 0 0 20px 0;
-	.content {
-		padding: 20px 10px 0 10px;
-	}
-	form {
+
+form.search {
+	float: left;
+	padding: 10px 0;
+	input[type="text"] {
+		background-color: #AEAEAE;
+		border: none;
+		border-right: none;
 		float: left;
-		width: 100%;
-		input[type="text"] {
-			border: 1px solid #d6d6d6;
-			border-right: none;
-			float: left;
-			font-size: 24px;
-			height: 38px;
-			padding: 5px 10px;
-			width: calc(60% - 80px);
-		}
-		input[type="submit"] {
-			background-color: #3d97c4;
-			background-image: image_url("icon_search.png");
-			background-position: 50%;
-			background-repeat: no-repeat;
-			background-size: 25px;
-			display: block;
-			float: left;
-			height: 50px;
-			padding: 0;
-			width: 50px;
-			text-indent: -50000px;
-		}
+		font-size: 20px;
+		height: 30px;
+		outline: none;
+		padding: 5px 10px;
+		width: 425px;
+	}
+	input[type="submit"] {
+		background-color: #55a0b7;
+		background-image: image_url("icon_search.png");
+		background-position: 50%;
+		background-repeat: no-repeat;
+		background-size: 20px;
+		display: block;
+		float: left;
+		height: 40px;
+		padding: 0;
+		width: 40px;
+		text-indent: -50000px;
 	}
 }
+
 .block { margin: 0 10px 20px 10px; }
 #main {
 	@include clear;
@@ -82,7 +81,7 @@ header {
 			}
 			.thumb {
 				background-position: 50%;
-				background-size: 100%;
+				background-size: cover;
 				display: block;
 				height: 0;
 				max-width: 100%;
