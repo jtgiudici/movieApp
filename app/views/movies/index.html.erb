@@ -1,11 +1,15 @@
 <%= render 'shared/header' %>
+<%= render 'shared/search' %>
+
 <div id="main">	
-	<% @movies.each do |movie| %>
-		<div class="column">
-			<div class="block">
-				<h1><%= movie.title %></h1>
-				<div class="thumb" style="background-image: url('assets/thumbs_movies/<%= movie.thumburl %>');"></div>
+	<div class="content">
+		<% @movies.each do |movie| %>
+			<div class="movie column">
+				<div class="block">
+					<h1><%= movie.title %></h1>
+					<div class="thumb" style="background-image: url('assets/thumbs_movies/<%= movie.thumburl %>');"></div>
+				</div>
 			</div>
-		</div>
-	<% end %>
+		<% end %>
+	</div>
 </div>
