@@ -11,7 +11,8 @@
 			thumburl: "fight-club.jpg",
 			director: "David Fincher",
 			year: "1999",
-			genre: "thriller"
+			genre: "thriller",
+			rating: "R"
 		)
 									
 		
