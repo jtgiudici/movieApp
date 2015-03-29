@@ -7,7 +7,11 @@
 			<div class="movie column">
 				<div class="block">
 					<h1><%= movie.title %></h1>
-					<div class="thumb" style="background-image: url('assets/thumbs_movies/<%= movie.thumburl %>');"></div>
+					<div class="thumb" style="background-image: url('assets/thumbs_movies/<%= movie.thumburl %>');">
+						<%= link_to '', movie %>
+							<div class="icon arrow"></div>
+						</a>
+					</div>
 				</div>
 			</div>
 		<% end %>

@@ -15,17 +15,17 @@
 }
 
 header {
-	background-color: #f4f4f4;
-	border-bottom: 5px solid #EAEAEA;
+	background-color: darken(#AEAEAE, 40%);
+	border-bottom: 5px solid darken(#AEAEAE, 45%);
 	@include clear;
 	height: 50px;
 	.logo {
-		background-image: image-url("logo_template.png");
-		background-size: 85px;
+		background-image: image-url("icon_logo.png");
+		background-size: 50px;
 		float: left;
 		height: 50px;
 		margin: 0 10px 0 0;
-		width: 85px;
+		width: 50px;
 	}
 }
 #searchBar {
@@ -61,7 +61,7 @@ header {
 		}
 	}
 }
-.block { margin: 0 12.5px 25px 12.5px; }
+.block { margin: 0 10px 20px 10px; }
 #main {
 	@include clear;
 	padding: 0 12.5px 0 12.5px;
@@ -87,6 +87,23 @@ header {
 				height: 0;
 				max-width: 100%;
 				padding-bottom: 147%;
+				position: relative;
+				a {
+					background-color: rgba(0,0,0,0.80);
+					background-image: image_url("icon_arrow_goto_movie.png");
+					background-position: 50%;
+					background-repeat: no-repeat;
+					background-size: 50px;
+					height: 100%;
+					opacity: 0;
+					position: absolute;
+					transition: opacity 0.25s ease-in-out;
+					width: 100%;
+					z-index: 1;
+					&:hover {
+						opacity: 1;
+					}
+				}
 			}
 		}
 	}
