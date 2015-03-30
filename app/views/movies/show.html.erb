@@ -1,23 +1,21 @@
 <%= render 'shared/header' %>
 
 <section id="hero">
-	<div class="overlay">
-		<div id="show">
-			<aside>
-				<div class="block">
-					<%= image_tag "thumbs_movies/" + @movie.thumburl %>
-				</div>
-			</aside>
-			<article>
-				<div class="block">
-					<h1 class="title"><%= @movie.title %></h1>
-				</div>
-			</article>
-		</div>
-	</div>
+	<div class="overlay"></div>
 	<%= image_tag "thumbs_movies/" + @movie.thumburl %>
 </section>
-
+<div id="show">
+	<aside>
+		<div class="block">
+			<%= image_tag "thumbs_movies/" + @movie.thumburl %>
+		</div>
+	</aside>
+	<article>
+		<div class="block">
+			<h1 class="title"><%= @movie.title %></h1>
+		</div>
+	</article>
+</div>
 
 <h2>Directed by: <%= @movie.director %>
 <h3>Released: <%= @movie.year %></h3>
