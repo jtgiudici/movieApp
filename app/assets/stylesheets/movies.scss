@@ -1,72 +1,80 @@
+$action: #9e8b6f;
 @mixin clear { &:after { content: "."; display: block; height:0; clear: both; visibility: hidden; }}
-
 * {
 	border: 0;
 	font-family: Helvetica, Arial, sans-serif;
 	margin: 0;
 	padding: 0;
 }
-
-.content {
-	@include clear;
-	margin: 0 auto;
-	max-width: 960px;
-	padding: 0 10px;
+body {
+	background: #f7f7f7;
 }
 
 header {
 	background-color: darken(#AEAEAE, 40%);
-	// border-bottom: 5px solid darken(#AEAEAE, 45%);
+	border-bottom: 5px solid darken(#AEAEAE, 45%);
 	@include clear;
 	height: 60px;
-	margin: 0 0 40px 0;
 	.logo {
 		background-image: image-url("icon_logo.png");
 		background-position: 50%;
 		background-size: 50px;
 		float: left;
 		height: 60px;
-		margin: 0 10px 0 0;
+		margin: 0 10px 0 10px;
 		width: 60px;
 	}
-}
-
-form.search {
-	float: left;
-	padding: 10px 0;
-	input[type="text"] {
-		background-color: #AEAEAE;
-		border: none;
-		border-right: none;
+	form.search {
 		float: left;
-		font-size: 20px;
-		height: 30px;
-		outline: none;
-		padding: 5px 10px;
-		width: 425px;
-	}
-	input[type="submit"] {
-		background-color: #55a0b7;
-		background-image: image_url("icon_search.png");
-		background-position: 50%;
-		background-repeat: no-repeat;
-		background-size: 20px;
-		display: block;
-		float: left;
-		height: 40px;
-		padding: 0;
-		width: 40px;
-		text-indent: -50000px;
+		padding: 10px 0;
+		width: calc(100% - 80px);
+		input[type="text"] {
+			background-color: #AEAEAE;
+			border: none;
+			border-right: none;
+			display: block;
+			float: left;
+			font-size: 20px;
+			height: 30px;
+			outline: none;
+			padding: 5px 10px;
+			width: calc(50% - 110px);
+		}
+		input[type="submit"] {
+			background-color: $action;
+			background-image: image_url("icon_search.png");
+			background-position: 50%;
+			background-repeat: no-repeat;
+			background-size: 20px;
+			cursor: pointer;
+			display: block;
+			float: left;
+			height: 40px;
+			padding: 0;
+			width: 40px;
+			text-indent: -50000px;
+			transition: background-color 0.25s ease-in-out;
+			&:hover { background-color: lighten($action, 5%); }
+		}
+		::-webkit-input-placeholder { color: #484848; font-style: italic; font-size: 14px; }
+		:-moz-placeholder { /* Firefox 18- */ color: #484848; font-style: italic; font-size: 14px; }
+		::-moz-placeholder {  /* Firefox 19+ */color: #484848; font-style: italic; font-size: 14px; }
+		:-ms-input-placeholder { color: #484848; font-style: italic; font-size: 14px; }
 	}
 }
 
 .block { margin: 0 10px 20px 10px; }
 #main {
 	@include clear;
-	padding: 0 12.5px 0 12.5px;
+	padding: 40px 12.5px 0 12.5px;
 	.movie.column {
+		
 		float: left;
-		width: 20%;
+		width: 16.666667%;
+		@media screen and (max-width: 1200px) { width: 20%; }
+		@media screen and (max-width: 1000px) { width: 25%; }
+		@media screen and (max-width: 800px) { width: 33.33334%; }
+		@media screen and (max-width: 600px) { width: 50%; }
 		.block {
 			h1 {
 				color: #AEAEAE;
@@ -108,31 +116,57 @@ form.search {
 	}
 }
 
-h1.main {
-	font-size: 24px;
-	margin: 0 12.5px 25px 12.5px;
+
+#hero {
+	height: 450px;
+	position: relative;
+	overflow: hidden;
+	.overlay {
+	@include clear;
+	
+		background-color: rgba(240,240,240,0.93);
+		box-shadow: inset 0 -5px 0 rgba(0,0,0,0.05);
+		height: 100%;
+		position: absolute;
+		width: 100%;
+		z-index: 2;
+	}
+	> img {
+		display: block;
+		margin: -500px auto 0 auto;
+		position: relative;
+		width: 1200px;
+		@media screen and (min-width: 1200px) {
+			width: 120%;
+		}
+	}
+}
+#show {
+	@include clear;
+	padding: 20px 10px;
+	position: relative;
+	//top: -120px;
+	z-index: 3;
+	aside {
+		float: left;
+		width: 25%;
+		 img {
+			width: 100%;
+		}
+	}
+	article {
+		float: left;
+		width: 75%;
+		h1 {
+			color: #484848;
+			font-weight: normal;
+			display: block;
+			font-size: 30px;
+		}
+	}
 }
 
-form {
-	fieldset {
-		margin: 0 0 20px 0;
-	}
-	label {
-		display: block;
-		margin: 0 0 5px 0;
-	}
-	input[type="text"] {
-		border: 1px solid #AEAEAE;
-		font-size: 14px;
-		height: 20px;
-		padding: 5px 10px;
-		width: 250px;
-	}
-	input[type="submit"] {
-		background-color: #4094bf;
-		color: #FFFFFF;
-		display: block;
-		font-size: 12px;
-		padding: 10px 20px;
-	}
-}
+
+
+//////
+
