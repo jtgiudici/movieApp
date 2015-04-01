@@ -1,3 +1,38 @@
+<script>
+	$(document).ready(function() {
+		$(".actions .favorite").click(function() {
+			if (!$(this).hasClass("active")) {
+				$(this).addClass("active");
+				$(".message").text("unfavorite");
+			}
+			else if ($(this).hasClass("active")) {
+				$(this).removeClass("active");
+				$(".message").text("favorite");
+			}
+		});
+		$(".actions a").mouseenter(function() {
+			if ($(this).hasClass("want_to_see")) {
+				$(".message").text("want to see");
+			}
+			else if ($(this).hasClass("favorite")) {
+				$(".message").text("favorite");
+				if ($(this).hasClass("active")) {
+					$(".message").text("unfavorite");
+				}
+			}
+			else if ($(this).hasClass("play_trailer")) {
+				$(".message").text("play trailer");
+			}
+			else if ($(this).hasClass("more_info")) {
+				$(".message").text("more info");
+			}
+		});
+		$(".actions a").mouseout(function() {
+			$(".message").text("");
+		});
+	});
+</script>
+
 <%= render 'shared/header' %>
 <div id="main">	
 	<div class="content">
@@ -6,9 +41,15 @@
 				<div class="block">
 					<h1><%= movie.title %></h1>
 					<div class="thumb" style="background-image: url('assets/thumbs_movies/<%= movie.thumburl %>');">
-						<%= link_to '', movie %>
-							<div class="icon arrow"></div>
-						</a>
+						<div class="overlay">
+							<div class="actions">
+								<a class="want_to_see"></a>
+								<a class="favorite"></a>
+								<a class="play_trailer"></a>
+								<%= link_to '', movie, :class => 'more_info' %>
+							</div>
+							<div class="message"></div>
+						</div>
 					</div>
 				</div>
 			</div>
