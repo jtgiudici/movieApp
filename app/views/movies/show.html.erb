@@ -4,19 +4,16 @@
 <div id="show">
 	<aside>
 		<div class="block">
-			<%= image_tag "thumbs_movies/" + @movie.thumburl %>
+			<%= image_tag @configuration.base_url + 'w342' + @movie['poster_path'] %>
 		</div>
 	</aside>
 	<article>
 		<div class="block">
-			<h1 class="title"><%= @movie.title %></h1>
+			<h1 class="title"><%= @movie["title"] %></h1>
 		</div>
 	</article>
 </div>
 
-<h2>Directed by: <%= @movie.director %>
-<h3>Released: <%= @movie.year %></h3>
-<h4>Genre: <%= @movie.genre %></h4>
-<h5>Rating: <%= @movie.rating %></h5>
+
 <%= link_to 'Edit', edit_movie_path(@movie)%> |
 <%= link_to 'Back', movies_path %>

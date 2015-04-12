@@ -1,11 +1,15 @@
 class MoviesController < ApplicationController
 	
   def index
-		@movies = Movie.search(params[:search])
+		# byebug
+		# @movies = Movie.search(params[:search])
+		@configuration = Tmdb::Configuration.new
+		@movies = Tmdb::Movie.popular
   end
 
   def show
-		@movie = Movie.find(params[:id])
+		@configuration = Tmdb::Configuration.new
+		@movie = Tmdb::Movie.detail(params[:id])
   end
 
   def new

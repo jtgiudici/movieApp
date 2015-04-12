@@ -39,14 +39,15 @@
 		<% @movies.each do |movie| %>
 			<div class="movie column">
 				<div class="block">
-					<h1><%= movie.title %></h1>
-					<div class="thumb" style="background-image: url('assets/thumbs_movies/<%= movie.thumburl %>');">
+					<h1><%= movie["title"] %></h1>
+					<div class="thumb" style="background-image: url('<%= @configuration.base_url + 'w342' + movie["poster_path"]  %>');">
 						<div class="overlay">
 							<div class="actions">
 								<a class="want_to_see"></a>
 								<a class="favorite"></a>
 								<a class="play_trailer"></a>
-								<%= link_to '', movie, :class => 'more_info' %>
+								<%# link_to '', movie, :class => 'more_info' %>
+								<%= link_to '', movie_path(movie["id"]), :class => 'more_info'  %>
 							</div>
 							<div class="message"></div>
 						</div>
